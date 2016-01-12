@@ -1,23 +1,17 @@
-package com.udacity.gradle.builditbigger;
+package com.blackboxstudios.rafael.androidjokeslibrary;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-import com.blackboxstudios.rafael.androidjokeslibrary.JokeActivity;
-import com.example.JokesProvider;
-
-
-public class MainActivity extends ActionBarActivity {
+public class JokeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.jokes_main);
+
     }
 
 
@@ -42,13 +36,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void tellJoke(View view){
-        Intent i = new Intent(this, JokeActivity.class);
-        i.putExtra("joke", JokesProvider.getJokes());
-        startActivity(i);
-        //Toast.makeText(this, JokesProvider.getJokes(), Toast.LENGTH_SHORT).show();
-    }
-
-
 }
