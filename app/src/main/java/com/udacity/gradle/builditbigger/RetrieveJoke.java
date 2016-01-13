@@ -49,6 +49,9 @@ public class RetrieveJoke extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
         if (myApiService == null) {  // Only do this once
+            /**
+             * Uncomment this block to test with a local deployment of backend module
+             */
             /*MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
                     // options for running against local devappserver
@@ -66,6 +69,9 @@ public class RetrieveJoke extends AsyncTask<Void, Void, String> {
             // end options for devappserver
             /**
              * To test with the published GCE Use this lines instead of previous method
+             *
+             * if you want to deploy this backend module to your own GCE do so and in the next method
+             * replace 'gce-joke-telling-app' for your own google project id
              */
 
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
